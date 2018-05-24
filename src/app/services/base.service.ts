@@ -16,7 +16,7 @@ export class BaseService {
     public get(lon, lat) {
         let url = `${this.server_url}${lon}/${lat}`;
         let remote = this.http.get(url)
-            .catch(error => Observable.throw({ message: error.message, status: error.status }))
+            .catch(error => Observable.throw({ error }))
         return remote;
     }
 }

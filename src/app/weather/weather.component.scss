@@ -1,0 +1,80 @@
+@import '../../assets/scss/variables';
+
+.weather-list {
+    display: block;
+    margin: 10px auto 50px;
+    overflow: hidden;
+    color: #333;
+    text-align: center;
+    box-sizing: border-box;
+    
+    max-width: 70%;
+    font-size: 1.5rem;
+    animation: expand .6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    @media #{$small-and-down} {
+        font-size: 1.2rem;
+        max-width: 100%;
+    }
+}
+
+@media #{$medium-and-up} {
+    @keyframes expand {
+        from {
+            max-width: 0;
+        }
+        to {
+            max-width: 70%;
+        }
+    }
+}
+
+@media #{$small-and-down} {
+    @keyframes expand {
+        from {
+            max-width: 0;
+        }
+        to {
+            max-width: 100%;
+        }
+    }
+}
+
+.city {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.content {
+    display: flex;
+}
+
+.time,
+.date,
+.temperature-icon,
+.temperature-text {
+    height: 80px;
+    line-height: 80px;
+}
+
+.date-time{ 
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.temperature{ 
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.date-time,
+.temperature {
+    font-size: 1.5rem;
+    flex-grow: 2;
+    flex: 1;
+}
+
+.weather-icon {
+    width: 70px;
+    height: 70px;
+    margin: 10px 0 0 0;
+}

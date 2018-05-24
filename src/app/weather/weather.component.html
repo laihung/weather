@@ -1,0 +1,19 @@
+<div class="weather-list" *ngFor="let weather of weatherList; let index = index;">
+  <p class="city">{{ weather.city }}</p>
+  <div class="content">
+    <div class="date-time">
+      <p class="time">{{ weather.dateTime * 1000 | date:'HH:mm:ss' }}</p>
+      <p class="date">{{ weather.dateTime * 1000 | date:'yyyy-MM-dd' }}</p>
+    </div>
+    <div class="temperature">
+      <div class="temperature-icon">
+        <img class="weather-icon" src="{{weather.icon}}" />
+      </div>
+      <p class="temperature-text">{{ weather.temp }} &#8451;</p>
+    </div>
+  </div>
+</div>
+
+<ng-container *ngIf="loader">
+  <app-loader></app-loader>
+</ng-container>
